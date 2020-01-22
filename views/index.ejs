@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MarkdownEditor</title>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+
+    <!--Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--Markdown-->
+    <script src="https://unpkg.com/marked@0.3.6"></script>
+    <script src="https://unpkg.com/lodash@4.16.0"></script>
+
+
+</head>
+<body>
+<div id = "wrapper">
+    <div id = "nav-panel">
+        <h2>Main menu:</h2>
+        <form action="/add" method="post">
+            <h3>New Document</h3>
+            <input type="text" name="newDoc" class = "myInput"/><br><br>
+            <input type="submit" value="Create" class = "myBtn" id = "newFileBtn"/>
+        </form>
+        <br>
+        <h3>List of Documents:</h3>
+        <%for (var i in allFiles){%>
+             <a href="/document/<%=allFiles[i]._id%>"><%=allFiles[i].fileName%> </a><br>
+        <%}%>
+    </div>
+    <%if (Id !== -1) { %>
+        <div id = "workarea">
+            <div id = "header">
+                <div id = "fileInfo">
+                    <b>FileName:</b> <span id = "headerFileName"><%=FileName%></span>
+                    (ID: <span id = "headerFileID"><%=Id%></span>)
+                </div>
+                <div id = "saveProgress">
+                    <form action="/delete" method="post" id = "delete">
+                        <input type="hidden" name="id" value = "<%=Id%>"/>
+                        <input type="hidden" name="name" value = "<%=FileName%>"/>
+                        <input type="submit" value="Delete" class = "myBtn"/>
+                    </form>
+                    <form action="/update" method="post" id = "update">
+                        <input type="hidden" name="id" value = "<%=Id%>"/>
+                        <input type="hidden" name="name" value = "<%=FileName%>"/>
+                        <input type="submit" value="Save" class = "myBtn"/>
+                    </form>
+                </div>
+            </div>
+            <div id = "editor">
+                <textarea @input = "update" id="editorTextarea" form="update" name="fileText"><%= Text%></textarea>
+                <div v-html="compiledMarkdown" id = "preview"></div>
+            </div>
+        </div>
+    <% }else{ %>
+        <div id = "workareaHidden">
+            <img src="../img/Markdown.png" id = "markdownImg">
+        </div>
+    <% } %>
+</div>
+
+<!--Translator-->
+<script src="../out/main.js"></script>
+</body>
+</html>

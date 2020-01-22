@@ -1,0 +1,33 @@
+{
+  "name": "markdown-editor",
+  "version": "1.0.0",
+  "description": "my-markdown-editor",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack -w",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "keywords": [
+    "markdown",
+    "nodejs",
+    "vuejs",
+    "mongodb"
+  ],
+  "author": "Pchelkin Alexandr",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.18.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

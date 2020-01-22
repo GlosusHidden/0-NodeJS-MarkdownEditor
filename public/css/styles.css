@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+}
+#wrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 16px auto;
+    border: 2px solid #c1c1c1;
+    border-radius: 10px;
+    width: 1500px;
+}
+#nav-panel{
+    width: 250px;
+    background-color: #efefef;
+    border-radius: 10px 0px 0px 10px;
+    padding: 20px;
+    border-right: 2px solid #c1c1c1;
+}
+#newFileBtn{
+    margin: 0px;
+}
+#workarea{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#workareaHidden{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#markdownImg{
+    width: 256px;
+    height: 256px;
+}
+#header{
+    height: 50px;
+    background-color: #efefef;
+    border-bottom: 2px solid #c1c1c1;
+    border-radius: 0px 10px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#saveProgress{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#editor{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#editorTextarea, #preview{
+    width: 50%;
+    height: 800px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+#editorTextarea{
+    outline: none;
+    resize: none;
+    padding: 10px;
+    border: none;
+}
+#preview{
+    padding: 0px 10px;
+    border-left: 2px solid #c1c1c1;
+}
+
+.myBtn{
+    margin: 5px 5px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #757575;
+    background: #b5b5b5;
+    outline: none;
+}
+.myBtn:hover{
+    color: #ffffff;
+    background-color: #323232;
+    cursor: pointer;
+}
+.myInput{
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #757575;
+    outline: none;
+    width: 150px;
+}
